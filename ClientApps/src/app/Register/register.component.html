@@ -1,0 +1,60 @@
+
+<div class="row" style="margin:0;overflow-y: hidden;">
+    <div class="col-md-6 offset-3 mt-5">
+        <!-- <h1>Introduction to Angular animations</h1>
+        <p *ngFor="let item of paraArray"> {{item}}
+        </p><br> -->
+        
+        <div class="mb-3 center div-border">
+            <div class="p-1">
+                <h4 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;opacity: .7;">Sign Up</h4>
+            </div>
+            <form [formGroup]="registerForm">
+              <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput placeholder="Enter your Email">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">Email-d is <strong> mandatory</strong> </mat-error>
+                <mat-error *ngIf="registerForm.get('email').hasError('pattern') && registerForm.get('email').touched"><strong>Invalid</strong> is Email-Id</mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input formControlName="fName" matInput placeholder="Enter First Name">
+                <mat-icon matSuffix>account_box</mat-icon>
+                <mat-error *ngIf="registerForm.get('fName').hasError('required') && registerForm.get('fName').touched">Name is <strong> mandatory</strong> </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input formControlName="lName" matInput placeholder="Enter Last Name">
+                <mat-icon matSuffix>account_box</mat-icon>
+                <mat-error *ngIf="registerForm.get('lName').hasError('required') && registerForm.get('lName').touched">Name is <strong> mandatory</strong> </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Mobile</mat-label>
+                <input formControlName="phone" matInput placeholder="Enter Moobile number">
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-error >Mobile No is <strong> invalid</strong> </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'"
+                       placeholder="password">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-error *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">Password is <strong> mandatory</strong></mat-error>
+                <mat-error *ngIf="registerForm.get('password').hasError('pattern') && registerForm.get('password').touched">Password required atleast <strong>one lowercase char,one uppercase char & one number</strong></mat-error>
+              </mat-form-field>
+            </form>
+            <div class="mt-3 text-right">
+                <button class="mr-2 " mat-raised-button color="primary" (click)="onSignup()">Sign up</button>
+                <button mat-raised-button color="warn">Cancle</button>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-md-6" style="height: 89vh;">
+        <div [@photosAnimation]="photos.length">
+            <div *ngFor="let photo of photos ;let i=index;" style="margin:0 -15px">
+                <img *ngIf="i==0" src="./assets/img/loginBack.jpeg"  style="height:100%; width:100%">
+            </div>
+        </div>
+    </div>-->
+</div>

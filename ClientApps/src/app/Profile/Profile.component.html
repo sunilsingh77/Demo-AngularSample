@@ -1,0 +1,32 @@
+<div class="row" style="margin:0">
+    
+    <div class="col-md-6 pl-5 pt-3">
+        <h1>Introduction to Angular animations</h1>
+        <p>
+            Animation provides the illusion of motion: HTML elements change styling over time. Well-designed animations can
+            make your application more fun and easier to use, but they aren't just cosmetic. Animations can improve your app
+            and user experience in a number of ways:
+        </p><p>
+            Without animations, web page transitions can seem abrupt and jarring.
+            Motion greatly enhances the user experience, so animations give users a chance to detect the application's
+            response to their actions.
+        </p><p>
+            Good animations intuitively call the user's attention to where it is needed.
+            Typically, animations involve multiple style transformations over time. An HTML element can move, change color,
+            grow or shrink, fade, or slide off the page. These changes can occur simultaneously or sequentially. You can
+            control the timing of each transformation.
+            Angular's animation system is built on CSS functionality, which means you can animate any property that the
+            browser considers animatable. This includes positions, sizes, transforms, colors, borders, and more. The W3C
+            maintains a list of animatable properties on its CSS Transitions page.
+        </p>
+       
+    </div>
+    <div class="col-md-6">
+        <div [@photosAnimation]="photos.length">
+            <div *ngFor="let photo of photos ;" style="display: block;">        
+                <img  [src]="photo.photo" height="150" width="300" style="float:right;padding:2px;">      
+            </div>
+          </div>
+    </div>
+   
+</div>
